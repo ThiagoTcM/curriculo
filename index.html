@@ -57,20 +57,39 @@
       .fixed {
         position: fixed;
       }
+      
       .fixed.to-top-right {
+        position: fixed;
+        bottom: 1rem;
         right: 1rem;
-        top: 1rem;
       }
+
       .language-icon {
-        font-size: 50px;
+        padding: 20px;
+        text-align: center;
+        height: 3rem;
+        width: 3rem;
+        font-size: 3rem;
         cursor: pointer;
+        display: inline-block;
+        background: #0097b2;
+        color: white;
+        text-decoration: none;
+        border-radius: 50%;
+        display: flex;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      .language-icon a{
+        align-content: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
       }
     </style>
   </head>
   <body>
     <div class="fixed to-top-right language-icon">
-      <a class="language-icon" onclick="togglePtBr()">🇧🇷</a>
-      <a class="language-icon" onclick="toggleEnUs()">🇺🇸</a>
+      <a id="languagebutton" onclick="toggleLanguage()">🇺🇸</a>
     </div>
     <div id="ptbr" class="container">
       <h1 id="-thiago-costa-mendes-"><strong>THIAGO COSTA MENDES</strong></h1>
@@ -371,7 +390,7 @@
         <strong>Systems Analyst | Full Stack Developer</strong>
       </h3>
       <p>
-        <em>Amazonas Industry Federation - FIEAM</em>\
+        <em>Amazonas Industry Federation - FIEAM</em><br/>
         <em>Jan 2020 - Present</em>
       </p>
       <ul>
@@ -446,7 +465,7 @@
         <strong>IT Intern | Development &amp; Support</strong>
       </h3>
       <p>
-        <em>Amazonas Industry Federation - FIEAM</em>\
+        <em>Amazonas Industry Federation - FIEAM</em><br/>
         <em>Sep 2018 - Jan 2020 (1 year and 5 months)</em>
       </p>
       <ul>
@@ -465,7 +484,7 @@
       </ul>
       <h3 id="-junior-it-technician-"><strong>Junior IT Technician</strong></h3>
       <p>
-        <em>Thomas Greg &amp; Sons</em>\ <em>Jan 2016 - Apr 2016 (4 months)</em>
+        <em>Thomas Greg &amp; Sons</em><br/><em>Jan 2016 - Apr 2016 (4 months)</em>
       </p>
       <ul>
         <li>Hardware maintenance and network infrastructure management.</li>
@@ -473,7 +492,7 @@
       </ul>
       <h3 id="-technical-assistant-"><strong>Technical Assistant</strong></h3>
       <p>
-        <em>COMDASP Business Consulting</em>\
+        <em>COMDASP Business Consulting</em><br/>
         <em>Nov 2013 - Feb 2015 (1 year and 4 months)</em>
       </p>
       <ul>
@@ -573,9 +592,26 @@
       </p>
     </div>
     <script>
+      function toggleLanguage() {
+        var x = document.getElementById("ptbr");
+        var y = document.getElementById("enus");
+        var z = document.getElementById("languagebutton");
+
+        if( x.style.display == "block"  ){
+            x.style.display = "none";
+            y.style.display = "block"; 
+            z.innerHTML = "🇧🇷"
+        }else{
+            y.style.display = "none";
+            x.style.display = "block"; 
+            z.innerHTML = "🇺🇸"
+        }
+      }
+
       function togglePtBr() {
         var x = document.getElementById("ptbr");
         var y = document.getElementById("enus");
+        var z = document.getElementById("languagebutton");
         x.style.display = "block";
         y.style.display = "none";
       }
