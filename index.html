@@ -1,627 +1,454 @@
-<html>
-  <head>
-    <style>
-      /*! normalize.css v2.1.3 | MIT License | git.io/normalize */.go-top,a{text-decoration:none}body,h1,h2,h3,h4,h5,h6{-webkit-font-smoothing:subpixel-antialiased}body,h1,html,mark{color:#000}h1,h4,h5,h6{text-align:center}.highlight .gs,.highlight .k,.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .o,.highlight .ow,b,dl dt,strong,table th{font-weight:700}code,h4,h5,tt{color:#333}.poetry pre,.poetry pre code{font-family:Georgia,Garamond,serif!important}.poetry pre code,pre{white-space:pre-wrap}.highlight .cs,.highlight .ge,.poetry pre,dfn,dl dt{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}.author,[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}a{background:0 0;color:#4183c4}a:focus{outline:dotted thin}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}hr{-moz-box-sizing:content-box;box-sizing:content-box}mark{background:#ff0}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}q{quotes:"\201C""\201D""\2018""\2019"}small{font-size:80%}sup{top:-.5em}img{border:0;max-width:100%}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}li{margin-bottom:.5rem}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}.go-top{position:fixed;bottom:2em;right:2em;background-color:#e0e0e0;font-size:12px;padding:1em;display:inline}@font-face{font-family:Roboto;font-style:normal;font-weight:100;src:local('Roboto Thin'),local('Roboto-Thin'),url(http://themes.googleusercontent.com/static/fonts/roboto/v10/vzIUHo9z-oJ4WgkpPOtg1_esZW2xOQ-xsNqO47m55DA.woff) format('woff')}body,html{margin:auto;padding-right:1em;padding-left:1em;max-width:64em}:not('#mkdbuttons'){margin:0;padding:0}body{background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;padding:30px;margin:15px;font-size:14px;line-height:1.6}table td,table th{border:1px solid #ccc;padding:6px 13px}body>:first-child{margin-top:0!important}body>:last-child{margin-bottom:0!important}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:700;cursor:text}h1{font-size:37px}h2{font-size:24px;border-bottom:1px solid #ccc;color:#0097b2}h3{font-size:18px;color:#333 -webkit-margin-before: .01em;-webkit-margin-after:0.01em}h4{font-size:16px;-webkit-margin-before:0.02em;-webkit-margin-after:0.02em}dl dt,h5,h6{font-size:14px}h6{color:#777}blockquote,p,pre,table{margin:15px 0}ol,ul{padding-left:30px}blockquote>:first-child,dl dd>:first-child,dl dt>:first-child,h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ol li ul:first-of-type,ol li>:first-child,ul li>:first-child{margin-top:0}hr{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;color:#ccc;height:4px;padding:0}.highlight pre,code,pre,table tr:nth-child(2n),tt{background-color:#f8f8f8}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6,body>h1:first-child,body>h1:first-child+h2,body>h2:first-child,body>h3:first-child,body>h4:first-child,body>h5:first-child,body>h6:first-child{margin-top:0;padding-top:0}dl,dl dt:first-child{padding:0}dl dt{padding:0;margin:15px 0 5px}blockquote>:last-child,dl dd>:last-child,dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}blockquote{border-left:4px solid #ddd;padding:0 15px;color:#777}table{border-spacing:0;border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table tr{border-top:1px solid #ccc;background-color:#fff}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;border-radius:3px;font-family:Consolas,'Liberation Mono',Courier,monospace;font-size:12px}pre>code{margin:0;padding:0;white-space:pre;border:0;background:0 0}.highlight pre,pre{border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:0}.poetry pre{font-size:110%!important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto}a.footnote,sub,sup{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{bottom:-.25em;vertical-align:sub;top:-1px}@media print{body,pre{background:#fff}blockquote,figure,img,pre,table{page-break-inside:avoid}body{border:0}code{background-color:#fff;color:#333!important;padding:0 .2em;border:1px solid #dedede}pre code{background-color:#fff!important;overflow:visible}}@media screen{body{box-shadow:none}.inverted .math,.inverted blockquote,.inverted body,.inverted caption,.inverted dd,.inverted dt,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted hr .inverted p,.inverted li,.inverted td,.inverted th,body.inverted{color:#eee!important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted h2{border-color:#555}.inverted hr{border-color:#777;border-width:1px!important}::selection{background:rgba(157,193,200,.5)}h1::selection{background-color:rgba(45,156,208,.3)}h2::selection{background-color:rgba(90,182,224,.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,.3)}code::selection{background-color:rgba(0,0,0,.7);color:#eee}code span::selection{background-color:rgba(0,0,0,.7)!important;color:#eee!important}a::selection{background-color:rgba(255,230,102,.2)}.inverted a::selection{background-color:rgba(255,230,102,.6)}caption::selection,td::selection,th::selection{background-color:rgba(180,237,95,.5)}.inverted,.inverted body{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c,.highlight .c1,.highlight .cm{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .cp,.highlight .cs{color:#999;font-weight:700}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .gr,.highlight .gt{color:#a00}.highlight .bp,.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp,.highlight .nn{color:#555}.highlight .gu{color:purple;font-weight:700}.highlight .kt,.highlight .nc{color:#458;font-weight:700}.highlight .il,.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .s,.highlight .s1,.highlight .s2,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .na,.highlight .no,.highlight .nv,.highlight .vc,.highlight .vg,.highlight .vi{color:teal}.highlight .nb{color:#0086b3}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nt{color:navy}.highlight .w{color:#bbb}.highlight .sr{color:#009926}.highlight .ss{color:#990073}.highlight .gc{color:#999;background-color:#eaf2f5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00f}.type-csharp .highlight .nf{color:#000;font-weight:400}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}
-    </style>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        max-width: 1200px;
-        margin: auto;
-        background: #bdbdbd;
-      }
-      .container {
-        background: white;
-        padding: 5rem;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .justified-text {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        text-align: justify;
-      }
-      ul {
-        text-align: justify;
-      }
-      h2 {
-        margin-bottom: 2rem;
-        margin-top: 1rem;
-      }
-      .contact {
-        text-align: center;
-        margin-top: 20px;
-      }
-      .contact a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px;
-        background: #0097b2;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-      }
-      .contact a:hover {
-        background: #007a92;
-      }
-      @media (max-width: 768px) {
-        body {
-          padding: 10px;
-        }
-        .container {
-          padding: 1rem;
-        }
-      }
-      .fixed {
-        position: fixed;
-      }
-      
-      .fixed.to-top-right {
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-      }
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<title>Thiago Costa Mendes - Resume/CV</title>
+	
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Thiago Costa Mendes - Resume/CV">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+	
+	<!-- Google Fonts -->	
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	
+	<!-- Bootstrpa Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	
+	<!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
 
-      .language-icon {
-        padding: 20px;
-        text-align: center;
-        height: 3rem;
-        width: 3rem;
-        font-size: 3rem;
-        cursor: pointer;
-        display: inline-block;
-        background: #0097b2;
-        color: white;
-        text-decoration: none;
-        border-radius: 50%;
-        display: flex;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-      .language-icon a{
-        align-content: center;
-        align-self: center;
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="fixed to-top-right language-icon">
-      <a id="languagebutton" onclick="toggleLanguage()">🇺🇸</a>
-    </div>
-    <div id="ptbr" class="container">
-      <h1 id="-thiago-costa-mendes-"><strong>THIAGO COSTA MENDES</strong></h1>
-      <h4 id="-full-stack-developer-analista-de-sistemas-">
-        <strong>Full Stack Developer | Analista de Sistemas</strong>
-      </h4>
-      <h5
-        id="c-net-framework-net-core-angular-sql-server-rest-apis-power-bi-totvs-rm"
-      >
-        C# | .NET Framework | .NET Core | Angular | SQL Server | REST APIs |
-        Power BI | Totvs RM
-      </h5>
-      <h2 id="-resumo-profissional-"><strong>RESUMO PROFISSIONAL</strong></h2>
-      <p class="justified-text">
-        Desenvolvedor Full Stack com experiência no
-        <strong>desenvolvimento de sistemas</strong> utilizando
-        <strong>C#, .NET Framework, .NET Core, Angular e SQL Server</strong>.
-        Especialista em
-        <strong
-          >arquitetura de software, integração de sistemas via APIs
-          RESTful</strong
-        >
-        e <strong>otimização de bancos de dados SQL Server</strong>. Ampla
-        experiência no
-        <strong>desenvolvimento de aplicações escaláveis e seguras</strong>,
-        garantindo alto desempenho e eficiência.
-      </p>
-      <p class="justified-text">
-        Possui <strong>graduação em Ciência da Computação</strong> e
-        <strong>Tecnologia em Redes de Computadores</strong>, além de
-        <strong>pós-graduação em Desenvolvimento Web Full Stack</strong>.
-        Certificado em <strong>Scrum, Kubernetes e tecnologias TOTVS</strong>.
-      </p>
-      <p class="justified-text">
-        Habilidades técnicas incluem
-        <strong
-          >API REST, SQL Server, Power BI, C#, .NET Framework, .NET Core,
-          JavaScript e Node.js e Inglês avançado</strong
-        >.
-      </p>
-      <h2 id="-experi-ncia-profissional-">
-        <strong>EXPERIÊNCIA PROFISSIONAL</strong>
-      </h2>
-      <h3 id="-analista-de-sistemas-desenvolvedor-full-stack-">
-        <strong>Analista de Sistemas | Desenvolvedor Full Stack</strong>
-      </h3>
-      <p>
-        <em>Federação das Indústrias do Amazonas - FIEAM</em> <br />
-        <em>Jan 2020 - Presente</em>
-      </p>
-      <ul>
-        <li>
-          <strong>Desenvolvimento e manutenção de sistemas web</strong>
-          utilizando <strong>C#, .NET, Angular e SQL Server</strong>, garantindo
-          <strong>alta disponibilidade e desempenho</strong>, resultando em uma
-          <strong>melhorias na eficiência operacional</strong>.
-        </li>
-        <li>
-          <strong>Criação de aplicações Code First</strong> com
-          <strong>Entity Framework</strong>, implementando
-          <strong>migrations</strong> para um
-          <strong>gerenciamento eficiente do banco de dados</strong>, reduzindo
-          <strong
-            >tempo de configuração e desenvolvimento de novas funções</strong
-          >.
-        </li>
-        <li>
-          <strong>Desenvolvimento e integração de APIs RESTful</strong>,
-          conectando <strong>sistemas internos e externos</strong>, melhorando a
-          interoperabilidade e reduzindo
-          <strong>tempo de comunicação de dados</strong>.
-        </li>
-        <li>
-          <strong>Refatoração e otimização de sistemas legados</strong>,
-          aprimorando a <strong>segurança, desempenho e escalabilidade</strong>.
-        </li>
-        <li>
-          <strong>Gerenciamento de versionamento de código</strong> utilizando
-          <strong>SVN, Git, GitFlow e GitHub</strong>, otimizando controle de
-          alterações e colaboração.
-        </li>
-        <li>
-          <strong>Containerização e orquestração de aplicações</strong> .NET e
-          Angular com <strong>Docker e Podman</strong>, garantindo o
-          <strong
-            >isolamento, escalabilidade e eficiência de recursos
-            computacionais</strong
-          >, reduzindo <strong>falhas em ambientes de produção</strong>.
-        </li>
-        <li>
-          <strong>Otimização avançada de consultas SQL Server</strong>,
-          reduzindo <strong>tempo de resposta dos sistemas</strong>, aprimorando
-          eficiência operacional com
-          <strong
-            >consultas otimizadas, views indexadas e procedures
-            parametrizadas</strong
-          >, dessa forma elevando
-          <strong>performance geral do banco de dados</strong> e reduzindo o
-          consumo de recursos computacionais.
-        </li>
-        <li>
-          <strong
-            >Desenvolvimento e manutenção de arquiteturas escaláveis</strong
-          >, permitindo
-          <strong>rápida adaptação às necessidades do negócio</strong> e
-          acelerando <strong>tempo de entrega de soluções aos clientes</strong>.
-        </li>
-        <li>
-          <strong>Criação de relatórios estratégicos</strong> utilizando
-          <strong>Power BI, PowerQuery, RM Reports e Totvs Reports</strong>,
-          possibilitando <strong>tomadas de decisão rápidas e seguras</strong>,
-          agilizando análises de dados da Gestão Corporativa.
-        </li>
-        <li>
-          <strong>Manutenção e suporte técnico do sistema TOTVS RM</strong>,
-          garantindo
-          <strong
-            >estabilidade e funcionamento adequado dos módulos Educacional,
-            Backoffice Financeiro, Contábil e Gestão de Pessoas</strong
-          >, assegurando <strong>uptime de 98%</strong>.
-        </li>
-      </ul>
-      <h3 id="-estagi-rio-de-ti-desenvolvimento-e-suporte-">
-        <strong>Estagiário de TI | Desenvolvimento e Suporte</strong>
-      </h3>
-      <p>
-        <em>Federação das Indústrias do Amazonas - FIEAM</em><br />
-        <em>Set 2018 - Jan 2020 (1 ano e 5 meses)</em>
-      </p>
-      <ul>
-        <li>
-          Auxílio no
-          <strong>desenvolvimento e manutenção de aplicações web</strong>
-          internas.
-        </li>
-        <li>
-          Suporte técnico a usuários, troubleshooting de sistemas e manutenção
-          de redes.
-        </li>
-        <li>
-          <strong>Implementação de melhorias em aplicações existentes</strong>,
-          aumentando a eficiência dos processos internos.
-        </li>
-      </ul>
-      <h3 id="-t-cnico-de-inform-tica-jr-">
-        <strong>Técnico de Informática Jr.</strong>
-      </h3>
-      <p>
-        <em>Thomas Greg &amp; Sons</em><br />
-        <em>Jan 2016 - Abr 2016 (4 meses)</em>
-      </p>
-      <ul>
-        <li>Manutenção de hardware e infraestrutura de redes.</li>
-        <li>Suporte a usuários e Helpdesk.</li>
-      </ul>
-      <h3 id="-assistente-t-cnico-"><strong>Assistente Técnico</strong></h3>
-      <p>
-        <em>COMDASP Consultoria Empresarial</em><br />
-        <em>Nov 2013 - Fev 2015 (1 ano e 4 meses)</em>
-      </p>
-      <ul>
-        <li>Suporte técnico e assistência em infraestrutura de TI.</li>
-        <li>Administração de redes locais e solução de problemas técnicos.</li>
-      </ul>
-      <h2 id="-forma-o-acad-mica-"><strong>FORMAÇÃO ACADÊMICA</strong></h2>
-      <h3 id="-p-s-gradua-o-em-desenvolvimento-web-full-stack-">
-        <strong>Pós-Graduação em Desenvolvimento Web Full Stack</strong>
-      </h3>
-      <p>Anhanguera Educacional (Jan 2023 - Set 2023)</p>
-      <h3 id="-bacharelado-em-ci-ncia-da-computa-o-">
-        <strong>Bacharelado em Ciência da Computação</strong>
-      </h3>
-      <p>UniNorte – Centro Universitário do Norte (Jan 2018 - Jan 2021)</p>
-      <h3 id="-tecn-logo-em-redes-de-computadores-">
-        <strong>Tecnólogo em Redes de Computadores</strong>
-      </h3>
-      <p>UniNorte – Centro Universitário do Norte (Jan 2010 - Jan 2015)</p>
-      <h2 id="-certifica-es-"><strong>CERTIFICAÇÕES</strong></h2>
-      <ul>
-        <li>
-          <strong>Scrum Foundation Professional Certification (SFPC)</strong> –
-          CertiProf (2023)
-        </li>
-        <li>
-          <strong>Containers &amp; Kubernetes Essentials</strong> – IBM (2022)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (RM) – Fórmula Visual</strong> – Universidade
-          TOTVS (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (RM) – RM Reports</strong> – Universidade
-          TOTVS (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (PROTHEUS) – TReports</strong> – Universidade
-          TOTVS (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (PROTHEUS) – ADVPL Fundamental</strong> –
-          Universidade TOTVS (2021)
-        </li>
-      </ul>
-      <h2 id="-habilidades-t-cnicas-"><strong>HABILIDADES TÉCNICAS</strong></h2>
-      <h3 id="-desenvolvimento-de-sistemas-programa-o-">
-        <strong>Desenvolvimento de Sistemas &amp; Programação</strong>
-      </h3>
-      <ul>
-        <li>C#, .NET Framework, .NET Core, Angular, JavaScript, Node.js</li>
-        <li>Arquitetura de software, Padrões de Projeto (Design Patterns)</li>
-        <li>RESTful APIs, JSON, Swagger, Web Services</li>
-        <li>HTML, CSS, TypeScript</li>
-      </ul>
-      <h3 id="-banco-de-dados-business-intelligence-">
-        <strong>Banco de Dados &amp; Business Intelligence</strong>
-      </h3>
-      <ul>
-        <li>SQL Server, Microsoft SQL, Power BI, PowerQuery</li>
-        <li>Otimização de consultas SQL, ETL e modelagem de dados</li>
-        <li>Desenvolvimento de relatórios interativos e análise de dados</li>
-      </ul>
-      <h3 id="-devops-infraestrutura-">
-        <strong>DevOps &amp; Infraestrutura</strong>
-      </h3>
-      <ul>
-        <li>
-          Docker, Kubernetes, Git, CI/CD (Continuous Integration/Deployment)
-        </li>
-        <li>Metodologias Ágeis: Scrum, Kanban</li>
-      </ul>
-      <h2 id="-idiomas-"><strong>IDIOMAS</strong></h2>
-      <ul>
-        <li><strong>Português</strong> – Nativo</li>
-        <li>
-          <strong>Inglês</strong> – Avançado (<strong
-            >Leitura, Escrita e Conversação</strong
-          >)
-        </li>
-      </ul>
-      <h2 id="-contato-"><strong>CONTATO</strong></h2>
-      <p>
-        📧 Email:
-        <a href="mailto\:thiago.costa.m@hotmail.com"
-          >thiago.costa.m@hotmail.com</a
-        >
-      </p>
-      <p>
-        🔗 LinkedIn:
-        <a href="https://www.linkedin.com/in/thiago-costa-mendes-646299142/"
-          >linkedin.com/in/thiago-costa-mendes-646299142</a
-        >
-      </p>
-      <p>
-        📱 WhatsApp: <a href="https://wa.me/5592981455872">+55 92 98145-5872</a>
-      </p>
-    </div>
-    <div style="display: none" id="enus" class="container">
-      <h1 id="-thiago-costa-mendes-"><strong>THIAGO COSTA MENDES</strong></h1>
-      <h4 id="-full-stack-developer-systems-analyst-">
-        <strong>Full Stack Developer | Systems Analyst</strong>
-      </h4>
-      <h5
-        id="c-net-framework-net-core-angular-sql-server-rest-apis-power-bi-totvs-rm"
-      >
-        C# | .NET Framework | .NET Core | Angular | SQL Server | REST APIs |
-        Power BI | Totvs RM
-      </h5>
-      <h2 id="-professional-summary-"><strong>PROFESSIONAL SUMMARY</strong></h2>
-      <p class="justified-text">
-        Full Stack Developer with experience in
-        <strong>system development</strong> using
-        <strong>C#, .NET Framework, .NET Core, Angular, and SQL Server</strong>.
-        Specialist in
-        <strong
-          >software architecture, system integration via RESTful APIs</strong
-        >, and <strong>SQL Server database optimization</strong>. Extensive
-        experience in
-        <strong>developing scalable and secure applications</strong>, ensuring
-        high performance and efficiency.
-      </p>
-      <p class="justified-text">
-        Holds a <strong>Bachelor’s degree in Computer Science</strong> and
-        <strong>Technology in Computer Networks</strong>, as well as a
-        <strong>postgraduate degree in Full Stack Web Development</strong>.
-        Certified in <strong>Scrum, Kubernetes, and TOTVS technologies</strong>.
-      </p>
-      <p class="justified-text">
-        Technical skills include
-        <strong
-          >API REST, SQL Server, Power BI, C#, .NET Framework, .NET Core,
-          JavaScript, and Node.js, with advanced English proficiency</strong
-        >.
-      </p>
-      <h2 id="-professional-experience-">
-        <strong>PROFESSIONAL EXPERIENCE</strong>
-      </h2>
-      <h3 id="-systems-analyst-full-stack-developer-">
-        <strong>Systems Analyst | Full Stack Developer</strong>
-      </h3>
-      <p>
-        <em>Amazonas Industry Federation - FIEAM</em><br/>
-        <em>Jan 2020 - Present</em>
-      </p>
-      <ul>
-        <li>
-          <strong>Development and maintenance of web systems</strong> using
-          <strong>C#, .NET, Angular, and SQL Server</strong>, ensuring
-          <strong>high availability and performance</strong>, resulting in
-          <strong>operational efficiency improvements</strong>.
-        </li>
-        <li>
-          <strong>Creation of Code First applications</strong> with
-          <strong>Entity Framework</strong>, implementing
-          <strong>migrations</strong> for
-          <strong>efficient database management</strong>, reducing
-          <strong>configuration time and development of new features</strong>.
-        </li>
-        <li>
-          <strong>Development and integration of RESTful APIs</strong>,
-          connecting <strong>internal and external systems</strong>, improving
-          interoperability and reducing
-          <strong>data communication time</strong>.
-        </li>
-        <li>
-          <strong>Refactoring and optimization of legacy systems</strong>,
-          enhancing <strong>security, performance, and scalability</strong>.
-        </li>
-        <li>
-          <strong>Version control management</strong> using
-          <strong>SVN, Git, GitFlow, and GitHub</strong>, optimizing change
-          tracking and collaboration.
-        </li>
-        <li>
-          <strong>Containerization and orchestration of applications</strong>
-          .NET and Angular with <strong>Docker and Podman</strong>, ensuring
-          <strong
-            >isolation, scalability, and efficient resource utilization</strong
-          >, reducing <strong>production environment failures</strong>.
-        </li>
-        <li>
-          <strong>Advanced SQL Server query optimization</strong>, reducing
-          <strong>system response time</strong>, improving operational
-          efficiency with
-          <strong
-            >optimized queries, indexed views, and parameterized
-            procedures</strong
-          >, thereby increasing
-          <strong>overall database performance</strong> and reducing
-          computational resource consumption.
-        </li>
-        <li>
-          <strong>Development and maintenance of scalable architectures</strong
-          >, enabling <strong>quick adaptation to business needs</strong> and
-          accelerating <strong>solution delivery time to clients</strong>.
-        </li>
-        <li>
-          <strong>Creation of strategic reports</strong> using
-          <strong>Power BI, PowerQuery, RM Reports, and Totvs Reports</strong>,
-          enabling <strong>fast and secure decision-making</strong>, speeding up
-          data analysis in <strong>corporate management</strong>.
-        </li>
-        <li>
-          <strong
-            >Maintenance and technical support for the TOTVS RM system</strong
-          >, ensuring
-          <strong
-            >stability and proper functioning of the Educational, Financial
-            Backoffice, Accounting, and Human Resources modules</strong
-          >, maintaining <strong>98% uptime</strong>.
-        </li>
-      </ul>
-      <h3 id="-it-intern-development-support-">
-        <strong>IT Intern | Development &amp; Support</strong>
-      </h3>
-      <p>
-        <em>Amazonas Industry Federation - FIEAM</em><br/>
-        <em>Sep 2018 - Jan 2020 (1 year and 5 months)</em>
-      </p>
-      <ul>
-        <li>
-          Assisted in
-          <strong>developing and maintaining internal web applications</strong>.
-        </li>
-        <li>
-          Provided technical support to users, system troubleshooting, and
-          network maintenance.
-        </li>
-        <li>
-          <strong>Implemented improvements in existing applications</strong>,
-          increasing internal process efficiency.
-        </li>
-      </ul>
-      <h3 id="-junior-it-technician-"><strong>Junior IT Technician</strong></h3>
-      <p>
-        <em>Thomas Greg &amp; Sons</em><br/><em>Jan 2016 - Apr 2016 (4 months)</em>
-      </p>
-      <ul>
-        <li>Hardware maintenance and network infrastructure management.</li>
-        <li>User support and Helpdesk assistance.</li>
-      </ul>
-      <h3 id="-technical-assistant-"><strong>Technical Assistant</strong></h3>
-      <p>
-        <em>COMDASP Business Consulting</em><br/>
-        <em>Nov 2013 - Feb 2015 (1 year and 4 months)</em>
-      </p>
-      <ul>
-        <li>Technical support and IT infrastructure assistance.</li>
-        <li>Local network administration and troubleshooting.</li>
-      </ul>
-      <h2 id="-education-"><strong>EDUCATION</strong></h2>
-      <h3 id="-postgraduate-degree-in-full-stack-web-development-">
-        <strong>Postgraduate Degree in Full Stack Web Development</strong>
-      </h3>
-      <p>Anhanguera Educacional (Jan 2023 - Sep 2023)</p>
-      <h3 id="-bachelor-s-in-computer-science-">
-        <strong>Bachelor’s in Computer Science</strong>
-      </h3>
-      <p>UniNorte – Centro Universitário do Norte (Jan 2018 - Jan 2021)</p>
-      <h3 id="-technologist-in-computer-networks-">
-        <strong>Technologist in Computer Networks</strong>
-      </h3>
-      <p>UniNorte – Centro Universitário do Norte (Jan 2010 - Jan 2015)</p>
-      <h2 id="-certifications-"><strong>CERTIFICATIONS</strong></h2>
-      <ul>
-        <li>
-          <strong>Scrum Foundation Professional Certification (SFPC)</strong> –
-          CertiProf (2023)
-        </li>
-        <li>
-          <strong>Containers &amp; Kubernetes Essentials</strong> – IBM (2022)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (RM) – Formula Visual</strong> – TOTVS
-          University (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (RM) – RM Reports</strong> – TOTVS University
-          (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (PROTHEUS) – TReports</strong> – TOTVS
-          University (2021)
-        </li>
-        <li>
-          <strong>TOTVS Backoffice (PROTHEUS) – ADVPL Fundamental</strong> –
-          TOTVS University (2021)
-        </li>
-      </ul>
-      <h2 id="-technical-skills-"><strong>TECHNICAL SKILLS</strong></h2>
-      <h3 id="-system-development-programming-">
-        <strong>System Development &amp; Programming</strong>
-      </h3>
-      <ul>
-        <li>C#, .NET Framework, .NET Core, Angular, JavaScript, Node.js</li>
-        <li>Software Architecture, Design Patterns</li>
-        <li>RESTful APIs, JSON, Swagger, Web Services</li>
-        <li>HTML, CSS, TypeScript</li>
-      </ul>
-      <h3 id="-databases-business-intelligence-">
-        <strong>Databases &amp; Business Intelligence</strong>
-      </h3>
-      <ul>
-        <li>SQL Server, Microsoft SQL, Power BI, PowerQuery</li>
-        <li>SQL query optimization, ETL, and data modeling</li>
-        <li>Development of interactive reports and data analysis</li>
-      </ul>
-      <h3 id="-devops-infrastructure-">
-        <strong>DevOps &amp; Infrastructure</strong>
-      </h3>
-      <ul>
-        <li>
-          Docker, Kubernetes, Git, CI/CD (Continuous Integration/Deployment)
-        </li>
-        <li>Agile Methodologies: Scrum, Kanban</li>
-      </ul>
-      <h2 id="-languages-"><strong>LANGUAGES</strong></h2>
-      <ul>
-        <li><strong>Portuguese</strong> – Native</li>
-        <li>
-          <strong>English</strong> – Advanced (<strong
-            >Reading, Writing, and Speaking</strong
-          >)
-        </li>
-      </ul>
-      <h2 id="-contact-"><strong>CONTACT</strong></h2>
-      <p>
-        📧 Email:
-        <a href="mailto:thiago.costa.m@hotmail.com"
-          >thiago.costa.m@hotmail.com</a
-        >
-      </p>
-      <p>
-        🔗 LinkedIn:
-        <a href="https://www.linkedin.com/in/thiago-costa-mendes-646299142/"
-          >linkedin.com/in/thiago-costa-mendes-646299142</a
-        >
-      </p>
-      <p>
-        📱 WhatsApp: <a href="https://wa.me/5592981455872">+55 92 98145-5872</a>
-      </p>
-    </div>
-    <script>
-      function toggleLanguage() {
-        var x = document.getElementById("ptbr");
-        var y = document.getElementById("enus");
-        var z = document.getElementById("languagebutton");
+	<!-- Theme CSS -->  
+	<link id="theme-style" rel="stylesheet" href="assets/css/risen.css">
 
-        if( x.style.display == "block"  ){
-            x.style.display = "none";
-            y.style.display = "block"; 
-            z.innerHTML = "🇧🇷"
-        }else{
-            y.style.display = "none";
-            x.style.display = "block"; 
-            z.innerHTML = "🇺🇸"
-        }
-      }
+</head> 
 
-      function togglePtBr() {
-        var x = document.getElementById("ptbr");
-        var y = document.getElementById("enus");
-        var z = document.getElementById("languagebutton");
-        x.style.display = "block";
-        y.style.display = "none";
-      }
 
-      function toggleEnUs() {
-        var x = document.getElementById("ptbr");
-        var y = document.getElementById("enus");
-        y.style.display = "block";
-        x.style.display = "none";
-      }
-    </script>
-  </body>
-</html>
+<body>
+	
+	<div class="container-fluid">
+			
+			<div class="main-content-wrapper">
+				<div class="container-fluid">
+					<div class="top-bar text-center position-relative">
+						<div class="top-bar-inner">
+							
+<!-- 							<a class="btn btn-primary top-bar-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/risen-free-bootstrap-5-dark-mode-resume-cv-template-for-developers/">Hire Me</a>
+ -->					
+<!-- 							<ul class="social-list list-inline mx-auto">
+								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-x-twitter fa-fw"></i></a></li>
+								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-github fa-fw"></i></a></li>
+								
+								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-linkedin-in fa-fw"></i></a></li>
+								
+								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-stack-overflow fa-fw"></i></a></li>
+								
+							</ul>//social-list -->
+							
+						</div><!--//top-bar-inner-->
+						
+					</div><!--//top-bar-->
+			
+					<div class="resume-wrapper mx-auto rounded-2">
+						<div class="resume-header px-4 px-lg-5">
+							<div class="resume-profile-holder text-center">
+								<img class="resume-profile-pic rounded-circle" src="assets/images/profile.jpg" alt="image">
+								
+								<h2 class="resume-name text-uppercase">Thiago Costa Mendes</h2>
+								<div class="resume-role-title text-uppercase">Desenvolvedor Full Stack | Analista de Sistemas</div>
+								<div class="resume-role-title-small text-uppercase">C# | .NET Framework | .NET Core | Angular | SQL Server | REST APIs | Power BI | Totvs RM </div>
+								<div class="resume-contact mt-4">
+									<ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
+										<a href="https://wa.me/5592981455872"><li class="list-inline-item me-md-3 me-lg-5"><i class="resume-contact-icon bi bi-telephone-inbound me-2"></i> +55 92 98145-5872</li></a>
+										<a href="mailto/:thiago.costa.m@hotmail.com"><li class="list-inline-item me-md-3 me-lg-5"><i class="resume-contact-icon bi bi-envelope me-2"></i> thiago.costa.m@hotmail.com</li></a>
+										<a href="https://www.linkedin.com/in/thiago-costa-mendes-646299142/"><li class="list-inline-item me-lg-5"><i class="resume-contact-icon fa-brands fa-linkedin-in me-2"></i> in/thiago-costa-mendes-646299142</li></a>
+									</ul>
+								</div><!--//resume-contact-->
+							</div><!--//profile-holder-->
+						</div><!--//resume-header-->
+						
+						<div class="resume-body p-4 p-lg-5">
+							<div class="row">
+								<div class="col-main col-12 col-lg-8 pe-lg-4">
+									<section class="resume-summary-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person me-2"></i>Resumo Profissional</h3>
+										<div class="resume-summary-desc">
+											Desenvolvedor Full Stack com experiência no
+											<strong>desenvolvimento de sistemas</strong> utilizando
+											<strong>C#, .NET Framework, .NET Core, Angular e SQL Server</strong>.
+											Especialista em
+											<strong
+											  >arquitetura de software, integração de sistemas via APIs
+											  RESTful</strong
+											>
+											e <strong>otimização de bancos de dados SQL Server</strong>. Ampla
+											experiência no
+											<strong>desenvolvimento de aplicações escaláveis e seguras</strong>,
+											garantindo alto desempenho e eficiência.											
+											<br/><br/>
+											Possui <strong>graduação em Ciência da Computação</strong> e
+											<strong>Tecnologia em Redes de Computadores</strong>, além de
+											<strong>pós-graduação em Desenvolvimento Web Full Stack</strong>.
+											Certificado em <strong>Scrum, Kubernetes e tecnologias TOTVS</strong>.
+											<br/><br/>
+											Habilidades técnicas incluem
+											<strong
+											  >API REST, SQL Server, Power BI, C#, .NET Framework, .NET Core,
+											  JavaScript e Node.js e Inglês avançado</strong
+											>.									
+										</section><!--//resume-section-->								
+									<hr>
+									
+									<section class="resume-experience-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-briefcase me-2"></i>Experiência Profissional</h3>
+										<div class="resume-timeline position-relative">
+											 
+										    <article class="resume-timeline-item position-relative pb-5">
+											    
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Jan 2020 - Presente</div>
+													    <div class="resume-company-name">FIEAM</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Analista de Sistemas | Desenvolvedor Full Stack</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+						   
+												    <ul class="resume-timeline-list">
+														<li>
+															<strong>Desenvolvimento e manutenção de sistemas web</strong>
+															utilizando <strong>C#, .NET, Angular e SQL Server</strong>, garantindo
+															<strong>alta disponibilidade e desempenho</strong>, resultando em uma
+															<strong>melhorias na eficiência operacional</strong>.	
+														</li>
+												    
+														<li>
+															<strong>Criação de aplicações Code First</strong> com
+															<strong>Entity Framework</strong>, implementando
+															<strong>migrations</strong> para um
+															<strong>gerenciamento eficiente do banco de dados</strong>, reduzindo
+															<strong
+															  >tempo de configuração e desenvolvimento de novas funções</strong
+															>.
+														  </li>													    
+														  <li>
+															<strong>Desenvolvimento e integração de APIs RESTful</strong>,
+															conectando <strong>sistemas internos e externos</strong>, melhorando a
+															interoperabilidade e reduzindo
+															<strong>tempo de comunicação de dados</strong>.
+														  </li>
+														  <li>
+															<strong>Refatoração e otimização de sistemas legados</strong>,
+															aprimorando a <strong>segurança, desempenho e escalabilidade</strong>.
+														  </li>
+														  <li>
+															<strong>Gerenciamento de versionamento de código</strong> utilizando
+															<strong>SVN, Git, GitFlow e GitHub</strong>, otimizando controle de
+															alterações e colaboração.
+														  </li>
+														  <li>
+															<strong>Containerização e orquestração de aplicações</strong> .NET e
+															Angular com <strong>Docker e Podman</strong>, garantindo o
+															<strong
+															  >isolamento, escalabilidade e eficiência de recursos
+															  computacionais</strong
+															>, reduzindo <strong>falhas em ambientes de produção</strong>.
+														  </li>
+														  <li>
+															<strong>Otimização avançada de consultas SQL Server</strong>,
+															reduzindo <strong>tempo de resposta dos sistemas</strong>, aprimorando
+															eficiência operacional com
+															<strong
+															  >consultas otimizadas, views indexadas e procedures
+															  parametrizadas</strong
+															>, dessa forma elevando
+															<strong>performance geral do banco de dados</strong> e reduzindo o
+															consumo de recursos computacionais.
+														  </li>
+														  <li>
+															<strong
+															  >Desenvolvimento e manutenção de arquiteturas escaláveis</strong
+															>, permitindo
+															<strong>rápida adaptação às necessidades do negócio</strong> e
+															acelerando <strong>tempo de entrega de soluções aos clientes</strong>.
+														  </li>
+														  <li>
+															<strong>Criação de relatórios estratégicos</strong> utilizando
+															<strong>Power BI, PowerQuery, RM Reports e Totvs Reports</strong>,
+															possibilitando <strong>tomadas de decisão rápidas e seguras</strong>,
+															agilizando análises de dados da Gestão Corporativa.
+														  </li>
+														  <li>
+															<strong>Manutenção e suporte técnico do sistema TOTVS RM</strong>,
+															garantindo
+															<strong
+															  >estabilidade e funcionamento adequado dos módulos Educacional,
+															  Backoffice Financeiro, Contábil e Gestão de Pessoas</strong
+															>, assegurando <strong>uptime de 98%</strong>.
+														  </li>
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->
+								    
+										    <article class="resume-timeline-item position-relative pb-5">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Set 2018 - Jan 2020 (1 ano e 5 meses)</div>
+													    <div class="resume-company-name">FIEAM</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Estagiário de TI | Desenvolvimento e Suporte</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">
+													    
+														<li>
+															Auxílio no
+															<strong>desenvolvimento e manutenção de aplicações web</strong>
+															internas.
+														  </li>
+														  <li>
+															Suporte técnico a usuários, troubleshooting de sistemas e manutenção
+															de redes.
+														  </li>
+														  <li>
+															<strong>Implementação de melhorias em aplicações existentes</strong>,
+															aumentando a eficiência dos processos internos.
+														  </li>												    
+														</ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->
+
+										    <article class="resume-timeline-item position-relative pb-5">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Jan 2016 - Abr 2016 (4 meses)</div>
+													    <div class="resume-company-name">Thomas Greg &amp; Sons</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Técnico de Informática Jr.</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">
+													    
+														<li>Manutenção de hardware e infraestrutura de redes.</li>
+														<li>Suporte a usuários e Helpdesk.</li>
+													   
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->	
+											
+											<article class="resume-timeline-item position-relative">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Nov 2013 - Fev 2015 (1 ano e 4 meses)</div>
+													    <div class="resume-company-name">COMDASP Consultoria Empresarial</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Assistente Técnico</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">
+													    
+														<li>Manutenção de hardware e infraestrutura de redes.</li>
+														<li>Suporte a usuários e Helpdesk.</li>
+													   
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->	
+
+							            </div><!--//resume-timeline-->
+									</section><!--//resume-experience-section-->
+								</div><!--//col-8-->
+								<div class="col-12 col-lg-4 ps-lg-4">
+									
+									<section class="resume-skills-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-gear me-2"></i>Habilidades Técnicas</h3>
+										
+										<ul class="list-unstyled">
+								        <li class="mb-2">
+								            <div class="resume-skill-name">FrontEnd (Angular, HTML, CSS, JS)</div>
+											<div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 80%"></div>
+											</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">BackEnd (.Net, Node.Js)</div>
+								            <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 95%"></div>
+											</div>
+									        
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Banco de Dados (SQL Server)</div>
+									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 95%"></div>
+											</div>
+								        </li>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Relatórios (PowerBI, RM Reports)</div>
+									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 90%"></div>
+											</div>
+								        </li>
+							        </ul>
+										
+									</section><!--//resume-section-->
+									
+<!-- 									<hr> -->
+									
+<!-- 									<section class="resume-skills-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-person-gear me-2"></i>Soft Skills</h3>
+										<ul class="list-inline">
+								            <li class="list-inline-item"><span class="badge resume-skill-badge">Atendimento ao Cliente</span></li>
+								            <li class="list-inline-item"><span class="badge resume-skill-badge">Project Management</span></li>
+								            
+								            <li class="list-inline-item"><span class="badge resume-skill-badge">DevOps</span></li>
+								            <li class="list-inline-item"><span class="badge resume-skill-badge">Public Speaking</span></li>
+								            
+								            				           
+							            </ul>
+									</section>//resume-section--> 
+									
+									<hr>
+									
+									<section class="resume-projects-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-patch-check me-2"></i>Certificados</h3>
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>Scrum Foundation Professional Certification (SFPC)</h4>
+											<div class="item-desc">
+												CertiProf (2024)
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>Containers & Kubernetes Essentials</h4>
+											<div class="item-desc">
+												IBM (2024) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>TOTVS Backoffice (RM) – Fórmula Visual</h4>
+											<div class="item-desc">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>TOTVS Backoffice (RM) – RM Reports</h4>
+											<div class="item-desc">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>TOTVS Backoffice (PROTHEUS) – TReports</h4>
+											<div class="item-desc">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i>TOTVS Backoffice (PROTHEUS) – ADVPL Fundamental</h4>
+											<div class="item-desc">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+											
+									</section>
+									
+									<hr>
+									
+									<section class="resume-educate-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-book me-2"></i>EDUCAÇÃO</h3>
+										<ul class="list-unstyled">
+										    <li class="mb-2">
+										        <div class="resume-degree font-weight-bold">Pós-Graduação em Desenvolvimento Web Full Stack</div>
+										        <div class="resume-degree-org">Anhanguera Educacional</div>
+										        <div class="resume-degree-time">Jan 2023 - Set 2023</div>
+										    </li>
+										    <li>
+										        <div class="resume-degree font-weight-bold">Bacharelado em Ciência da Computação</div>
+										        <div class="resume-degree-org">UniNorte – Centro Universitário do Norte</div>
+										        <div class="resume-degree-time">Jan 2018 - Jan 2021</div>
+										    </li>
+											<li>
+										        <div class="resume-degree font-weight-bold">Tecnólogo em Redes de Computadores</div>
+										        <div class="resume-degree-org">UniNorte – Centro Universitário do Norte</div>
+										        <div class="resume-degree-time">Jan 2010 - Jan 2015</div>
+										    </li>
+									    </ul>
+									</section><!--//resume-section-->
+									
+									<hr>
+									
+									<section class="resume-lang-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-translate me-2"></i>Idiomas</h3>
+										 <ul class="list-unstyled resume-lang-list">
+										    <li class="mb-2">
+										        <div class="resume-lang-name">Português (Nativo)</div>
+										        <div class="resume-level-indicator row gx-0 flex-nowrap">
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+										        </div><!--//resume-level-indicator-->
+										    </li>
+										     <li class="mb-2">
+										        <div class="resume-lang-name">Inglês</div>
+										        <div class="resume-level-indicator row gx-0 flex-nowrap">
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item"></span></div>
+										        </div><!--//resume-level-indicator-->
+										    </li>
+										</ul>
+									</section>
+									
+									
+									
+								</div><!--//col-side-->
+							</div><!--//row-->
+					    </div><!--//resume-body-->
+				    </div><!--//resume-wrapper-->
+				</div><!--//container-fluid-->
+			</div><!--//main-content-wrapper-->
+		
+		
+		</div><!--//row-->
+	
+	</div><!--//container-->
+	
+	<footer class="footer text-center py-4">
+		<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+		<small class="copyright">Designed with <span class="sr-only">love</span><i class="bi bi-heart-fill" style="color:#fe655c"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+	</footer>
+
+</body>
