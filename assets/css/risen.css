@@ -11772,9 +11772,23 @@ a.btn svg {
     color: #E0E0E0;
     font-weight: 500;
   }
-.resume-body .col-main {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
+
+  .small-only{
+    display: block;
+  }
+
+@media (min-width: 992px) {
+  .resume-body .col-main {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .small-only{
+    display: none;
+  }  
+
+
+}  
+
 .resume-section {
   margin-bottom: 2rem;
 }
