@@ -27,28 +27,23 @@
 
 
 <body>
+	<div id="languagebutton" onclick="toggleLanguage()">
+		<div style="display: none;" id="icon-brasil" class="flag-icon">
+			<svg class="w-12 h-12" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="256" fill="#6da544" r="256"/><path d="m256 100.174 211.478 155.826-211.478 155.826-211.478-155.826z" fill="#ffda44"/><circle cx="256" cy="256" fill="#f0f0f0" r="89.043"/><g fill="#0052b4"><path d="m211.478 250.435c-15.484 0-30.427 2.355-44.493 6.725.623 48.64 40.227 87.884 89.015 87.884 30.168 0 56.812-15.017 72.919-37.968-27.557-34.497-69.958-56.641-117.441-56.641z"/><path d="m343.393 273.06c1.072-5.524 1.651-11.223 1.651-17.06 0-49.178-39.866-89.043-89.043-89.043-36.694 0-68.194 22.201-81.826 53.899 12.05-2.497 24.526-3.812 37.305-3.812 51.717-.001 98.503 21.497 131.913 56.016z"/></g><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
+		</div>
 	
-	<div class="container-fluid">
-			
+		<div id="icon-usa" class="flag-icon ">
+			<svg class="w-12 h-12" enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><circle cx="256" cy="256" fill="#f0f0f0" r="256"/><g fill="#d80027"><path d="m244.87 256h267.13c0-23.106-3.08-45.49-8.819-66.783h-258.311z"/><path d="m244.87 122.435h229.556c-15.671-25.572-35.708-48.175-59.07-66.783h-170.486z"/><path d="m256 512c60.249 0 115.626-20.824 159.356-55.652h-318.712c43.73 34.828 99.107 55.652 159.356 55.652z"/><path d="m37.574 389.565h436.852c12.581-20.529 22.338-42.969 28.755-66.783h-494.362c6.417 23.814 16.174 46.254 28.755 66.783z"/></g><path d="m118.584 39.978h23.329l-21.7 15.765 8.289 25.509-21.699-15.765-21.699 15.765 7.16-22.037c-19.106 15.915-35.852 34.561-49.652 55.337h7.475l-13.813 10.035c-2.152 3.59-4.216 7.237-6.194 10.938l6.596 20.301-12.306-8.941c-3.059 6.481-5.857 13.108-8.372 19.873l7.267 22.368h26.822l-21.7 15.765 8.289 25.509-21.699-15.765-12.998 9.444c-1.301 10.458-1.979 21.11-1.979 31.921h256c0-141.384 0-158.052 0-256-50.572 0-97.715 14.67-137.416 39.978zm9.918 190.422-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765zm-8.289-100.083 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822zm100.115 100.083-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822l-21.7 15.765zm-8.289-100.083 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822zm0-74.574 8.289 25.509-21.699-15.765-21.699 15.765 8.289-25.509-21.7-15.765h26.822l8.288-25.509 8.288 25.509h26.822z" fill="#0052b4"/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
+		</div>
+	</div>
+
+	<div id="ptbr">
+		<div class="container-fluid">		
 			<div class="main-content-wrapper">
 				<div class="container-fluid">
 					<div class="top-bar text-center position-relative">
-						<div class="top-bar-inner">
-							
-<!-- 							<a class="btn btn-primary top-bar-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/risen-free-bootstrap-5-dark-mode-resume-cv-template-for-developers/">Hire Me</a>
- -->					
-<!-- 							<ul class="social-list list-inline mx-auto">
-								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-x-twitter fa-fw"></i></a></li>
-								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-github fa-fw"></i></a></li>
-								
-								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-linkedin-in fa-fw"></i></a></li>
-								
-								<li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="#"><i class="fa-brands fa-stack-overflow fa-fw"></i></a></li>
-								
-							</ul>//social-list -->
-							
-						</div><!--//top-bar-inner-->
-						
+						<div class="top-bar-inner">						
+						</div><!--//top-bar-inner-->					
 					</div><!--//top-bar-->
 			
 					<div class="resume-wrapper mx-auto rounded-2">
@@ -441,16 +436,427 @@
 					    </div><!--//resume-body-->
 				    </div><!--//resume-wrapper-->
 				</div><!--//container-fluid-->
-			</div><!--//main-content-wrapper-->
-		
-		
+			</div><!--//main-content-wrapper-->	
 		</div><!--//row-->
+	</div>
 	
-	</div><!--//container-->
-	
+	<div style="display: none;" id="enus">
+		<div class="container-fluid">		
+			<div class="main-content-wrapper">
+				<div class="container-fluid">
+					<div class="top-bar text-center position-relative">
+						<div class="top-bar-inner">						
+						</div><!--//top-bar-inner-->					
+					</div><!--//top-bar-->
+			
+					<div class="resume-wrapper mx-auto rounded-2">
+						<div class="resume-header px-4 px-lg-5">
+							<div class="resume-profile-holder text-center">
+								<img class="resume-profile-pic rounded-circle" src="assets/images/profile.jpg" alt="image">
+								
+								<h2 class="resume-name text-uppercase">Thiago Costa Mendes</h2>
+								<div class="resume-role-title text-uppercase">Full Stack Developer | Systems Analyst</div>
+								<div class="resume-role-title-small text-uppercase">C# | .NET Framework | .NET Core | Angular | SQL Server | REST APIs | Power BI | Totvs RM </div>
+								<div class="resume-contact mt-4">
+									<ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
+										<a href="https://wa.me/5592981455872"><li class="list-inline-item me-md-3 me-lg-5"><i class="resume-contact-icon bi bi-telephone-inbound me-2"></i> +55 92 98145-5872</li></a>
+										<a href="/mailto/:thiago.costa.m@hotmail.com"><li class="list-inline-item me-md-3 me-lg-5"><i class="resume-contact-icon bi bi-envelope me-2"></i> thiago.costa.m@hotmail.com</li></a>
+										<a href="https://www.linkedin.com/in/thiago-costa-mendes-646299142/"><li class="list-inline-item me-lg-5"><i class="resume-contact-icon fa-brands fa-linkedin-in me-2"></i> in/thiago-costa-mendes-646299142</li></a>
+									</ul>
+								</div><!--//resume-contact-->
+							</div><!--//profile-holder-->
+						</div><!--//resume-header-->
+						
+						<div class="resume-body p-4 p-lg-5">
+							<div class="row">
+								<div class="col-main col-12 col-lg-8 pe-lg-4">
+									<section class="resume-summary-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3"><i class="resume-section-heading-icon bi bi-person me-2"></i>PROFESSIONAL SUMMARY</h3>
+										<div class="resume-summary-desc">
+											Full Stack Developer with experience in
+											<strong>system development</strong> using
+											<strong>C#, .NET Framework, .NET Core, Angular, and SQL Server</strong>.
+											Specialist in
+											<strong
+											  >software architecture, system integration via RESTful APIs</strong
+											>, and <strong>SQL Server database optimization</strong>. Extensive
+											experience in
+											<strong>developing scalable and secure applications</strong>, ensuring
+											high performance and efficiency.											
+											<br/><br/>
+											Holds a <strong>Bachelor’s degree in Computer Science</strong> and
+											<strong>Technology in Computer Networks</strong>, as well as a
+											<strong>postgraduate degree in Full Stack Web Development</strong>.
+											Certified in <strong>Scrum, Kubernetes, and TOTVS technologies</strong>.
+											<br/><br/>
+											Technical skills include
+											<strong
+											>API REST, SQL Server, Power BI, C#, .NET Framework, .NET Core,
+											JavaScript, and Node.js, with advanced English proficiency</strong
+											>.					
+										</section><!--//resume-section-->								
+									<hr>
+									
+									<section class="resume-experience-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-briefcase me-2"></i>PROFESSIONAL EXPERIENCE</h3>
+										<div class="resume-timeline position-relative">
+											 
+										    <article class="resume-timeline-item position-relative pb-5">
+											    
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Jan 2020 - Present</div>
+													    <div class="resume-company-name">FIEAM</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Systems Analyst | Full Stack Developer</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+						   
+												    <ul class="resume-timeline-list">
+														<li>
+															<strong>Development and maintenance of web systems</strong> using
+															<strong>C#, .NET, Angular, and SQL Server</strong>, ensuring
+															<strong>high availability and performance</strong>, resulting in
+															<strong>operational efficiency improvements</strong>.
+														  </li>
+														  <li>
+															<strong>Creation of Code First applications</strong> with
+															<strong>Entity Framework</strong>, implementing
+															<strong>migrations</strong> for
+															<strong>efficient database management</strong>, reducing
+															<strong>configuration time and development of new features</strong>.
+														  </li>
+														  <li>
+															<strong>Development and integration of RESTful APIs</strong>,
+															connecting <strong>internal and external systems</strong>, improving
+															interoperability and reducing
+															<strong>data communication time</strong>.
+														  </li>
+														  <li>
+															<strong>Refactoring and optimization of legacy systems</strong>,
+															enhancing <strong>security, performance, and scalability</strong>.
+														  </li>
+														  <li>
+															<strong>Version control management</strong> using
+															<strong>SVN, Git, GitFlow, and GitHub</strong>, optimizing change
+															tracking and collaboration.
+														  </li>
+														  <li>
+															<strong>Containerization and orchestration of applications</strong>
+															.NET and Angular with <strong>Docker and Podman</strong>, ensuring
+															<strong
+															  >isolation, scalability, and efficient resource utilization</strong
+															>, reducing <strong>production environment failures</strong>.
+														  </li>
+														  <li>
+															<strong>Advanced SQL Server query optimization</strong>, reducing
+															<strong>system response time</strong>, improving operational
+															efficiency with
+															<strong
+															  >optimized queries, indexed views, and parameterized
+															  procedures</strong
+															>, thereby increasing
+															<strong>overall database performance</strong> and reducing
+															computational resource consumption.
+														  </li>
+														  <li>
+															<strong>Development and maintenance of scalable architectures</strong
+															>, enabling <strong>quick adaptation to business needs</strong> and
+															accelerating <strong>solution delivery time to clients</strong>.
+														  </li>
+														  <li>
+															<strong>Creation of strategic reports</strong> using
+															<strong>Power BI, PowerQuery, RM Reports, and Totvs Reports</strong>,
+															enabling <strong>fast and secure decision-making</strong>, speeding up
+															data analysis in <strong>corporate management</strong>.
+														  </li>
+														  <li>
+															<strong
+															  >Maintenance and technical support for the TOTVS RM system</strong
+															>, ensuring
+															<strong
+															  >stability and proper functioning of the Educational, Financial
+															  Backoffice, Accounting, and Human Resources modules</strong
+															>, maintaining <strong>98% uptime</strong>.
+														  </li>
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->
+								    
+										    <article class="resume-timeline-item position-relative pb-5">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Sep 2018 - Jan 2020 (1 year and 5 months)</div>
+													    <div class="resume-company-name">FIEAM</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">IT Intern | Development &amp; Support</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">												    
+														<li>
+															Assisted in
+															<strong>developing and maintaining internal web applications</strong>.
+														  </li>
+														  <li>
+															Provided technical support to users, system troubleshooting, and
+															network maintenance.
+														  </li>
+														  <li>
+															<strong>Implemented improvements in existing applications</strong>,
+															increasing internal process efficiency.
+														  </li>  
+														</ul>
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->
+
+										    <article class="resume-timeline-item position-relative pb-5">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Jan 2016 - Apr 2016 (4 months)</div>
+													    <div class="resume-company-name">Thomas Greg &amp; Sons</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Junior IT Technician</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">
+														<li>Hardware maintenance and network infrastructure management.</li>
+														<li>User support and Helpdesk assistance.</li>													   
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->	
+											
+											<article class="resume-timeline-item position-relative">
+
+											    <div class="resume-timeline-item-header mb-2">
+												    
+												    <div class="resume-position-meta d-flex justify-content-between mb-1">
+													    <div class="resume-position-time">Nov 2013 - Feb 2015 (1 year and 4 months)</div>
+													    <div class="resume-company-name">COMDASP Consultoria Empresarial</div>
+												    </div>
+											        <h3 class="resume-position-title mb-1">Technical Assistant</h3>
+
+											    </div><!--//resume-timeline-item-header-->
+											    <div class="resume-timeline-item-desc">
+												    <ul class="resume-timeline-list">
+													    
+														<li>Technical support and IT infrastructure assistance.</li>
+														<li>Local network administration and troubleshooting.</li>
+													   
+												    </ul>
+												    
+											    </div><!--//resume-timeline-item-desc-->
+		
+										    </article><!--//resume-timeline-item-->	
+
+							            </div><!--//resume-timeline-->
+									</section><!--//resume-experience-section-->
+								</div><!--//col-8-->
+
+								<hr class="small-only">
+
+								<div class="col-12 col-lg-4 ps-lg-4">
+									
+									<section class="resume-skills-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-gear me-2"></i>Technical Skills</h3>
+										
+										<ul class="list-unstyled">
+								        <li class="mb-2">
+								            <div class="resume-skill-name">FrontEnd (Angular, HTML, CSS, JS)</div>
+											<div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 80%"></div>
+											</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">BackEnd (.Net, Node.Js)</div>
+								            <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 95%"></div>
+											</div>
+									        
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Database (SQL Server)</div>
+									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 95%"></div>
+											</div>
+								        </li>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Reports (PowerBI, RM Reports)</div>
+									        <div class="progress resume-progress" role="progressbar" aria-label="Basic example" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+											  <div class="progress-bar resume-progress-bar" style="width: 90%"></div>
+											</div>
+								        </li>
+							        </ul>
+										
+									</section><!--//resume-section-->
+									
+									<hr> 
+									
+									<section class="resume-skills-section resume-section">
+											<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-person-gear me-2"></i>Soft Skills</h3>
+											<ul class="list-inline">
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Customer Service</span></li>
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Problem Solving</span></li>											
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Teamwork & Collaboration</span></li>
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Adaptability & Continuous Learning</span></li>
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Analytical & Strategic Thinking</span></li>
+												<li class="list-inline-item"><span class="badge resume-skill-badge">Time Management & Organization</span></li>																						   
+											</ul>
+										</section>
+									<hr>
+									
+									<section class="resume-educate-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-book me-2"></i>EDUCATION</h3>
+										<ul class="list-unstyled">
+										    <li class="mb-2">
+										        <div class="resume-degree font-weight-bold">Postgraduate Degree in Full Stack Web Development</div>
+										        <div class="resume-degree-org">Anhanguera Educacional</div>
+										        <div class="resume-degree-time">Jan 2023 - Sep 2023</div>
+										    </li>
+										    <li>
+										        <div class="resume-degree font-weight-bold">Bachelor’s in Computer Science</div>
+										        <div class="resume-degree-org">UniNorte – Centro Universitário do Norte</div>
+										        <div class="resume-degree-time">Jan 2018 - Jan 2021</div>
+										    </li>
+											<li>
+										        <div class="resume-degree font-weight-bold">Technologist in Computer Networks</div>
+										        <div class="resume-degree-org">UniNorte – Centro Universitário do Norte</div>
+										        <div class="resume-degree-time">Jan 2010 - Jan 2015</div>
+										    </li>
+									    </ul>
+									</section><!--//resume-section-->
+																		
+									<hr>
+									
+									<section class="resume-projects-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-patch-check me-2"></i>CERTIFICATIONS</h3>
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>Scrum Foundation Professional Certification (SFPC)</h4>
+											<div class="resume-degree-org">
+												CertiProf (2024)
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>Containers & Kubernetes Essentials</h4>
+											<div class="resume-degree-org">
+												IBM (2024) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>TOTVS Backoffice (RM) – Fórmula Visual</h4>
+											<div class="resume-degree-org">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>TOTVS Backoffice (RM) – RM Reports</h4>
+											<div class="resume-degree-org">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>TOTVS Backoffice (PROTHEUS) – TReports</h4>
+											<div class="resume-degree-org">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+										<div class="item">
+											<h4 class="resume-degree font-weight-bold"></i>TOTVS Backoffice (PROTHEUS) – ADVPL Fundamental</h4>
+											<div class="resume-degree-org">
+												Universidade TOTVS (2021) 
+											</div>
+										</div><!--//item-->
+											
+									</section>
+									
+									<hr>
+																		
+									<section class="resume-lang-section resume-section">
+										<h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i class="resume-section-heading-icon bi bi-translate me-2"></i>LANGUAGES</h3>
+										 <ul class="list-unstyled resume-lang-list">
+										    <li class="mb-2">
+										        <div class="resume-lang-name">Portuguese (Native)</div>
+										        <div class="resume-level-indicator row gx-0 flex-nowrap">
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+										        </div><!--//resume-level-indicator-->
+										    </li>
+										     <li class="mb-2">
+										        <div class="resume-lang-name">English</div>
+										        <div class="resume-level-indicator row gx-0 flex-nowrap">
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item item-full"></span></div>
+											        <div class="col"><span class="item"></span></div>
+										        </div><!--//resume-level-indicator-->
+										    </li>
+										</ul>
+									</section>
+									
+									
+									
+								</div><!--//col-side-->
+							</div><!--//row-->
+					    </div><!--//resume-body-->
+				    </div><!--//resume-wrapper-->
+				</div><!--//container-fluid-->
+			</div><!--//main-content-wrapper-->	
+		</div><!--//row-->
+	</div>
+
 	<footer class="footer text-center py-4">
 		<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
 		<!-- <small class="copyright">Designed with <span class="sr-only">love</span><i class="bi bi-heart-fill" style="color:#fe655c"></i> by <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small> -->
 	</footer>
+
+	<script>
+		function toggleLanguage() {
+		  var x = document.getElementById("ptbr");
+		  var y = document.getElementById("enus");
+
+		  var br = document.getElementById("icon-brasil");
+		  var usa = document.getElementById("icon-usa");
+		  
+		  if( x.style.display == "block"  ){
+			  x.style.display = "none";
+			  y.style.display = "block"; 
+
+			  br.style.display = "block";
+			  usa.style.display = "none";
+		  }else{
+			  y.style.display = "none";
+			  x.style.display = "block"; 
+
+			  br.style.display = "none";
+			  usa.style.display = "block";
+		  }
+		}
+	  </script>
 
 </body>
